@@ -1,4 +1,4 @@
-# Time Tracker to Rule Then All
+# A Personal bot
 
 Takes you activities and prodcasts to multiple sources
 

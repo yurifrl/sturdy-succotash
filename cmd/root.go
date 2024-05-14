@@ -22,8 +22,8 @@ var rootCmd = &cobra.Command{
 	Long:  `The Load Balancer Logs Processor is a tool for processing and analyzing logs from load balancers such as Cloudflare.`,
 }
 
-var apiCmd = &cobra.Command{
-	Use:   "worker",
+var appCmd = &cobra.Command{
+	Use:   "app",
 	Short: "TODO",
 	Long:  `TODO.`,
 	Run: func(cmd *cobra.Command, args []string) {
@@ -71,6 +71,6 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.AddCommand(apiCmd)
+	rootCmd.AddCommand(appCmd)
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

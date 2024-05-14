@@ -11,8 +11,8 @@ x-base-service: &base_service
     - .:/usr/local/app
     - ./hack/secrets:/etc/secrets
 services:
-  api:
+  app:
     <<: *base_service
-    command: go run main.go api
+    command: go run main.go app
     ports:
       - 8086:8080
