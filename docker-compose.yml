@@ -1,0 +1,18 @@
+version: '3.8'
+
+x-base-service: &base_service
+  build:
+    context: .
+    target: builder 
+  entrypoint: ""
+  environment:
+    - FOO=bar
+  volumes:
+    - .:/usr/local/app
+    - ./hack/secrets:/etc/secrets
+services:
+  api:
+    <<: *base_service
+    command: go run main.go api
+    ports:
+      - 8086:8080

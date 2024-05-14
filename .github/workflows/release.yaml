@@ -1,0 +1,28 @@
+name: Release
+
+on: [release]
+
+jobs:
+  build-push:
+    permissions:
+      contents: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # TODO
+      # - name: Build and push lb-logs
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     platforms: linux/amd64
+      #     push: true
+      #     build-args: VERSION=latest
+      #     tags: ...
